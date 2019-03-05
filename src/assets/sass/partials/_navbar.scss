@@ -1,0 +1,100 @@
+.topbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    .nav-bar{
+        height: $nav-height;
+        background: $default-bg;
+        &--left{
+            float: left;
+            position: relative;
+            width: $nav-left-width;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
+            -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                    justify-content: center;
+            .nav-bar__lists{
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-box-align: center;
+                    -ms-flex-align: center;
+                        align-items: center;
+                &__link{
+                    padding-left: 10px;
+                    svg{
+                        width: 36px;
+                        height: 36px;
+                        fill: white;
+                    }
+                }
+            }
+        }
+        &--right{
+            margin-left: $nav-left-width;
+            min-height: $nav-height;
+            width: calc(100vw - 240px);
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: justify;
+                -ms-flex-pack: justify;
+                    justify-content: space-between;
+            &__lists{
+                &--left{
+                    display: -webkit-box;
+                    display: -ms-flexbox;
+                    display: flex;
+                    -webkit-box-align: center;
+                        -ms-flex-align: center;
+                            align-items: center;
+                    .nav-bar__lists__link{
+                        margin-right: 10px;
+                        svg{
+                            margin-left: 5px;
+                            height: 32px;
+                            width: 32px;
+                            fill: white;
+                        }
+                        input{
+                            background-color: rgba(255, 255, 255, 0.2);
+                            margin-left: 10px;
+                            border: 1px solid white;
+                            border-radius: 30px;
+                            color: white;
+                            &::-webkit-input-placeholder{
+                                    color: white;
+                                    padding-left: 5px;
+                            }
+                            &::-ms-input-placeholder{
+                                    color: white;
+                                    padding-left: 5px;
+                            }
+                            &::placeholder{
+                                    color: white;
+                                    padding-left: 5px;
+                            }
+                        }
+                    }
+                }
+            }
+            .nav-bar__lists--right{
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-box-align: center;
+                    -ms-flex-align: center;
+                        align-items: center;
+                .nav-bar__lists__link{
+                margin-right: 20px;
+                }
+            }
+        }
+    }
+}
