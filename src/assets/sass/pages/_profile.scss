@@ -1,0 +1,144 @@
+.profile{
+    &--left{
+        &__top-part{
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                    flex-direction: column;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
+            img{
+                border: 1px solid rgb(166, 166, 166);
+                padding: 2px;
+                margin-bottom: 10px;
+            }
+            h4{
+                margin: 5px;
+                color: rgb(71, 79, 98);
+            }
+            p{
+                color: rgb(112, 109, 113)
+            }
+        }
+        &__bottom-part{
+            margin-top: 30px;
+            color: rgb(138, 141, 156);
+            ul{
+                li{
+                    margin: 10px;
+                }
+            }
+            .social-media-wrapper{
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-box-align: center;
+                    -ms-flex-align: center;
+                        align-items: center;
+                -webkit-box-pack: center;
+                    -ms-flex-pack: center;
+                        justify-content: center;
+                svg{
+                    margin: 20px 5px;
+                }
+            }
+        }
+    }
+    &--right{
+
+        input{
+            width: 99%;
+            border: 0;
+            border-bottom: 2px solid rgb(62, 62, 91);
+            height: auto;
+            margin: 10px;
+            &:focus{
+                outline: none;
+            }
+        }
+        textarea{
+            width: 99%;
+            border: 0;
+            border-bottom: 2px solid rgb(62, 62, 91);
+            height: auto;
+            margin-left: 10px;
+            &:focus{
+                outline: none;
+            }
+        }
+    }
+    .button-wrapper{
+        margin-top: 30px;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        .follow-button{
+            width: 90px;
+            height: 35px;
+            background: green;
+            border-radius: 3px;
+            text-align: center;
+            color: #fff;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
+            margin-right: 3px;
+            &:hover{
+                text-decoration: none;
+            }
+            span{
+                margin: 0 auto;
+            }
+        }
+        .message-button{
+            width: 90px;
+            height: 35px;
+            background: salmon;
+            border-radius: 3px;
+            text-align: center;
+            color: #fff;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
+            margin-left: 3px;
+            &:hover{
+                text-decoration: none;
+            }
+            span{
+                margin: 0 auto;
+            }
+        }
+    }
+    .settings__form{
+        &__item{
+            p{
+                color: rgb(121, 118, 147);
+            }
+        }
+    }
+    button{
+        width: 110px;
+        height: 35px;
+        background-color: $default-bg;
+        color: white;
+        border: 0;
+        font-size: 18px;
+        line-height: 18px;
+        border-radius: 5px;
+        margin-top: 15px;
+    }
+}

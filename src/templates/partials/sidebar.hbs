@@ -1,10 +1,175 @@
-<div class="side-menu">
+<div id="side-menu" class="side-menu">
     <ul class="side-menu__lists--title side-menu__lists">
-        <li class="side-menu__lists__list">main</li>
+        <li class="side-menu__lists--title__list"> <span>{{default.sidenav.title}}</span> </li>
     </ul>
+
     <ul class="side-menu__lists">
-        <li class="side-menu__lists__list{{#is basename 'dashboard'}} active{{/is}}"><a href="#">Menu</a></li>
-        <li class="side-menu__lists__list"><a href="#">Menu</a></li>
-        <li class="side-menu__lists__list"><a href="#">Menu</a></li>
+        <li class="side-menu__lists__list{{#is custom_basename 'dashboard'}} active{{/is}}">
+            <a href="#">
+                {{#is default.lang "en"}}
+                    <img src="assets/images/icons8-home-page-50.png">
+                {{else}}
+                    <img src="../assets/images/icons8-home-page-50.png">
+                {{/is}}
+                <span>Dashboard</span>
+            </a>
+        </li>
+
+        <li class="side-menu__lists__list {{#is custom_basename 'uiKit'}} active{{/is}}">
+
+            <a href="#">
+                {{#is default.lang "en"}}
+                    <img src="assets/images/icons8-fill-color-26.png">
+                {{else}}
+                    <img src="../assets/images/icons8-fill-color-26.png">
+                {{/is}}
+                <span>UI Kit</span>
+            </a>
+        </li>
+
+        <li class="side-menu__lists__list {{#is custom_basename 'typography'}} active{{/is}}">
+
+            <a href="#">
+                {{#is default.lang "en"}}
+                    <img src="assets/images/icons8-infinity-50.png">
+                {{else}}
+                    <img src="../assets/images/icons8-infinity-50.png">
+                {{/is}}
+                <span>Typography</span>
+            </a>
+        </li>
+
+        <li class="side-menu__lists__list {{#is custom_basename 'components'}} active{{/is}}">
+
+            <a href="#">
+                {{#is default.lang "en"}}
+                    <img src="assets/images/icons8-light-50.png">
+                {{else}}
+                    <img src="../assets/images/icons8-light-50.png">
+                {{/is}}
+                <span>Components</span>
+            </a>
+        </li>
+
+        <li class="side-menu__lists__list {{#is custom_basename 'icons'}} active{{/is}}">
+
+            <a href="#">
+                {{#is default.lang "en"}}
+                    <img src="assets/images/icons8-spray-32.png">
+                {{else}}
+                    <img src="../assets/images/icons8-spray-32.png">
+                {{/is}}
+
+                <span>Icons</span>
+            </a>
+        </li>
+
+        <li class="side-menu__lists__list {{#is custom_basename 'forms'}} active{{/is}}">
+
+            <a href="#">
+                {{#is default.lang "en"}}
+                    <img src="assets/images/icons8-form-32.png">
+                {{else}}
+                    <img src="../assets/images/icons8-form-32.png">
+                {{/is}}
+                <span>Forms</span>
+            </a>
+        </li>
     </ul>
+
+    <ul class="side-menu__lists--title side-menu__lists">
+        <li class="side-menu__lists--title__list"> <span>Forms</span> </li>
+    </ul>
+
+    <ul class="side-menu__lists">
+        <li class="side-menu__lists__list{{#is custom_basename 'tables'}} active{{/is}}">
+
+            <a href="#">
+                {{#is default.lang "en"}}
+                    <img src="assets/images/icons8-table-of-content-24.png">
+                {{else}}
+                    <img src="../assets/images/icons8-table-of-content-24.png">
+                {{/is}}
+                <span>Tables</span>
+            </a>
+        </li>
+
+        <li class="side-menu__lists__list {{#is custom_basename 'charts'}} active{{/is}}">
+
+            <a href="#">
+                {{#is default.lang "en"}}
+                    <img src="assets/images/icons8-line-chart-32.png">
+                {{else}}
+                    <img src="../assets/images/icons8-line-chart-32.png">
+                {{/is}}
+                <span>Charts</span>
+            </a>
+        </li>
+
+        <li class="side-menu__lists__list {{#is custom_basename 'maps'}} active{{/is}}">
+
+            <a href="#">
+                {{#is default.lang "en"}}
+                    <img src="assets/images/icons8-map-32.png">
+                {{else}}
+                    <img src="../assets/images/icons8-map-32.png">
+                {{/is}}
+                <span>Maps</span>
+            </a>
+        </li>
+
+        <li class="side-menu__lists__list {{#is custom_basename 'mail'}} active{{/is}}">
+
+            <a href="#">
+                {{#is default.lang "en"}}
+                    <img src="assets/images/icons8-new-post-32.png">
+                {{else}}
+                    <img src="../assets/images/icons8-new-post-32.png">
+                {{/is}}
+                <span>Mail</span>
+            </a>
+        </li>
+    </ul>
+
+    <ul class="side-menu__lists--title side-menu__lists">
+        <li class="side-menu__lists--title__list"><span>Extras</span></li>
+    </ul>
+
+    <ul class="side-menu__lists">
+        <li class="side-menu__lists__list{{#is custom_basename 'pages'}} active{{/is}}">
+
+            <a href="#">
+                {{#is default.lang "en"}}
+                    <img src="assets/images/icons8-file-24.png">
+                {{else}}
+                    <img src="../assets/images/icons8-file-24.png">
+                {{/is}}
+                <span>Pages</span>
+            </a>
+        </li>
+
+        <li class="side-menu__lists__list {{#is custom_basename 'extras'}} active{{/is}}">
+
+            <a href="#">
+                {{#is default.lang "en"}}
+                    <img src="assets/images/icons8-present-50.png">
+                {{else}}
+                    <img src="../assets/images/icons8-present-50.png">
+                {{/is}}
+                <span>Extras</span>
+            </a>
+        </li>
+        <li class="side-menu__lists__list {{#is custom_basename 'multiLevel'}} active{{/is}}">
+
+            <a href="#">
+                {{#is default.lang "en"}}
+                    <img src="assets/images/icons8-level-up-24.png">
+                {{else}}
+                    <img src="../assets/images/icons8-level-up-24.png">
+                {{/is}}
+                <span>Multi Level</span>
+            </a>
+        </li>
+    </ul>
+
 </div>

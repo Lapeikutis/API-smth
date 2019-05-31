@@ -1,69 +1,189 @@
+---
+custom_basename: dashboard
+---
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-6 col-xl-3">
-            <div class="boxes">
+            <div class="boxes boxes--right">
                 <div class="row">
                     <div class="col-4">
-                        <div class="circle circle--success">
+                        <div class="circle circle--border circle--success">
                             <svg class="svg-icon">
                                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#trackChanges"></use>
                             </svg>
                         </div>
                     </div>
                     <div class="col-8 v-align">
-                        <h5>65,570</h5>
-                        <p>Today's visits</p>
+                        <h5>64,570</h5>
+                        <p>{{dashboard.stats.visits}}</p>
                     </div>
                 </div>
             </div>
         </div>
         <div class="col-lg-6 col-xl-3">
-            <div class="boxes">
+            <div class="boxes boxes--right">
                 <div class="row">
                     <div class="col-4">
-                        <div class="circle circle--primary">
+                        <div class="circle circle--border circle--primary">
                             <svg class="svg-icon">
                                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#favorite"></use>
                             </svg>
                         </div>
                     </div>
                     <div class="col-8 v-align">
-                        <h5>65,570</h5>
-                        <p>Today's visits</p>
+                        <h5>31,570</h5>
+                        <p>{{dashboard.stats.revenue}}</p>
                     </div>
                 </div>
             </div>
         </div>
         <div class="col-lg-6 col-xl-3">
-            <div class="boxes">
+            <div class="boxes boxes--right">
                 <div class="row">
                     <div class="col-4">
-                        <div class="circle circle--danger">
+                        <div class="circle circle--border circle--danger">
                             <svg class="svg-icon">
                                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#timeline"></use>
                             </svg>
                         </div>
                     </div>
                     <div class="col-8 v-align">
-                        <h5>65,570</h5>
-                        <p>Today's visits</p>
+                        <h5>280</h5>
+                        <p>{{dashboard.stats.sales}}</p>
                     </div>
                 </div>
             </div>
         </div>
         <div class="col-lg-6 col-xl-3">
-            <div class="boxes">
+            <div class="boxes boxes--right">
                 <div class="row">
                     <div class="col-4">
-                        <div class="circle circle--secondary">
+                        <div class="circle circle--border circle--secondary">
                             <svg class="svg-icon">
                                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#visibility"></use>
                             </svg>
                         </div>
                     </div>
                     <div class="col-8 v-align">
-                        <h5>65,570</h5>
-                        <p>Today's visits</p>
+                        <h5>0.16%</h5>
+                        <p>{{dashboard.stats.conversion}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xl-4">
+            <div class="boxes">
+                <h6 class="boxes__title">Yearly sales report</h6>
+                <canvas id="myChart"></canvas>
+            </div>
+        </div>
+        <div class="col-xl-4">
+            <div class="boxes">
+                <h6 class="boxes__title">Total revenue</h6>
+                <canvas id="myChart1"></canvas>
+            </div>
+        </div>
+        <div class="col-xl-4">
+            <div class="boxes">
+                <h6 class="boxes__title">Total revenue</h6>
+                <canvas id="myChart2"></canvas>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xl-8">
+            <div class="boxes">
+                <h6 class="boxes__title">Latest Projects</h6>
+                <p class="boxes__subheading">Your awesome text goes here.</p>
+                <table class="table table-borderless">
+                      <thead>
+                        <tr>
+                          <th scope="col">#</th>
+                          <th scope="col">Project Name</th>
+                          <th scope="col">Start Date</th>
+                          <th scope="col">Due Date</th>
+                          <th scope="col">Status</th>
+                          <th scope="col">Assign</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row">1</th>
+                          <td>Minton Admin v1</td>
+                          <td>01/01/2016</td>
+                          <td>26/04/2016</td>
+                          <td>Released</td>
+                          <td>Coderthemes</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">2</th>
+                          <td>Minton Frontend v1</td>
+                          <td>01/01/2016</td>
+                          <td>26/04/2016</td>
+                          <td>Released</td>
+                          <td>Minton admin</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">3</th>
+                          <td>Minton Admin v1.1</td>
+                          <td>01/01/2016</td>
+                          <td>10/05/2016</td>
+                          <td>Pending</td>
+                          <td>Coderthemes</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">4</th>
+                          <td>Minton Frontend v1.1</td>
+                          <td>01/01/2016</td>
+                          <td>31/05/2016</td>
+                          <td>Work in Progress</td>
+                          <td>Minton admin</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">5</th>
+                          <td>Minton Admin v1.3</td>
+                          <td>01/01/2016</td>
+                          <td>31/05/2016</td>
+                          <td>Coming soon</td>
+                          <td>Coderthemes</td>
+                        </tr>
+                      </tbody>
+                    </table>
+            </div>
+        </div>
+        <div class="col-xl-4">
+            <div class="row">
+                <div class="col-12">
+                    <div class="boxes boxes--flex">
+
+                        <img class="boxes__image" src="assets/images/user2.jfif" alt="user foto">
+                        <div class="boxes__user-info v-align">
+                            <h6>CodeMaster</h6>
+                            <p>codemaster@gmail.com</p>
+                            <p style="color: yellow;">Admin</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="boxes boxes--flex">
+                            <img class="boxes__image" src="assets/images/user3.jpg" alt="user foto">
+                            <div class="boxes__user-info v-align">
+                                <h6>JustCoder</h6>
+                                <p>justcoder@gmail.com</p>
+                                <p style="color: green;">User</p>
+                            </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="boxes boxes--flex">
+                            <img class="boxes__image" src="assets/images/user1.jpeg" alt="user foto">
+                            <div class="boxes__user-info v-align">
+                                <h6>CodeGuru</h6>
+                                <p>codeguru@gmail.com</p>
+                                <p style="color: rgb(228, 58, 58);">Admin</p>
+                            </div>
                     </div>
                 </div>
             </div>

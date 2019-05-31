@@ -3,6 +3,11 @@
 @import 'layout.scss';
 @import 'utils.scss';
 
+::-webkit-scrollbar{
+    width: 0px;
+    background: transparent;
+}
+
 body {
     margin: 0;
     background: $bg-color;
@@ -14,15 +19,13 @@ ul {
     margin: 0;
 }
 
-a{
-    color: #fff;
-    &:hover{
-        text-decoration: none;
-        color: #fff;
-    }
+
+
+p{
+    margin: 0;
 }
 
-h1,h2,h3,h4,h5{
+h1,h2,h3,h4,h5,h6{
     margin: 0;
     padding: 0;
 }

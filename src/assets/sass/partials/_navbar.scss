@@ -1,4 +1,13 @@
 .topbar{
+    -webkit-transition: $transition;
+    transition: $transition;
+    a{
+        color: #fff;
+        &:hover{
+            text-decoration: none;
+            color: #fff;
+        }
+    }
     position: fixed;
     top: 0;
     left: 0;
@@ -6,6 +15,8 @@
     .nav-bar{
         height: $nav-height;
         background: $default-bg;
+        -webkit-transition: $transition;
+        transition: $transition;
         &--left{
             float: left;
             position: relative;
@@ -95,6 +106,47 @@
                 margin-right: 20px;
                 }
             }
+            &--closed{
+                margin-left: 50px;
+                width: calc(100vw - 50px);
+            }
         }
+        .dropdown-menu{
+            &__item{
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-box-align: center;
+                    -ms-flex-align: center;
+                        align-items: center;
+                color: black;
+                padding: 10px 20px;
+                .circle{
+                    @include circle($height: 40px, $width: 40px)
+                }
+                &__title{
+                    margin-left: 10px;
+
+                    h5{
+                        color: $text-color;
+                    }
+                    p{
+                        line-height: 1;
+                    }
+                }
+            }
+        }
+        &--closed{
+            width: 50px;
+            .nav-bar__lists{
+                &__link{
+                    span{
+                        text-transform: uppercase;
+                        display: none;
+                    }
+                }
+            }
+        }
+
     }
 }

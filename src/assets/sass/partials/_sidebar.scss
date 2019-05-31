@@ -8,14 +8,26 @@
             box-shadow: $box-shadow;
     overflow: scroll;
     padding: 20px 0 80px;
+    z-index: 999;
+    -webkit-transition: $transition;
+    transition: $transition;
     &::-webkit-scrollbar{
         width: 0px;
         background: transparent;
+    }
+    &--right{
+        right: 0;
+        &--closed{
+            right: -$nav-left-width;
+        }
     }
     &__lists{
         &__list {
             padding: 12px 20px;
             position: relative;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
             a{
                 display: -webkit-box;
                 display: -ms-flexbox;
@@ -23,20 +35,63 @@
                 -webkit-box-align: center;
                     -ms-flex-align: center;
                         align-items: center;
+                color: black;
+
+                span{
+                    margin-left: 15px;
+                }
                 &::after{
                     @include arrow();
                 }
             }
             &.active{
-                a{
-                    color: red;
+                background: repeating-linear-gradient(
+                  to right,
+                  $default-bg,
+                  $default-bg 5px,
+                  $greyish 5px,
+                  $greyish 240px
+                );
+            }
+            img{
+                width: 22px;
+                height: 22px;
+                opacity: 0.45;
+                margin-left: 10px;
+            }
+        }
+        &--title{
+            padding: 12px 20px;
+            &__list{
+                font-size: 16px;
+                font-weight: bold;
+                opacity: 0.5;
+            }
+        }
+    }
+    &--closed{
+        width: 50px;
+        .side-menu__lists__list{
+            padding: 12px 5px;
+
+            span{
+                display: none;
+            }
+            a{
+                &:after{
+                    display: none;
                 }
             }
-
+            img{
+                width: 26px;
+                height: 26px;
+                opacity: 0.8;
+            }
         }
-        &__title{
-            padding: 12px 20px;
-            font-size: 12px;
+        .side-menu__lists--title__list{
+            span{
+                display: none;
+            }
         }
     }
 }

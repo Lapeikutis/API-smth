@@ -37,10 +37,17 @@ module.exports = function(grunt) {
         },
         en: {
             options: {
-                data: ['src/templates/data/en/*.yml', 'src/templates/data/*.yml']
+                data: ['src/templates/data/en/*.yml']
             },
             src: ['src/templates/pages/en/*.hbs'],
             dest: './web'
+        },
+        lt: {
+            options: {
+                data: ['src/templates/data/lt/*.yml']
+            },
+            src: ['src/templates/pages/lt/*.hbs'],
+            dest: './web/lt/'
         },
     },
     svg_sprite: {
@@ -53,6 +60,9 @@ module.exports = function(grunt) {
                 '../../../../web/assets/images/ic_trackChanges_24px.svg',
                 '../../../../web/assets/images/ic_visibility_24px.svg',
                 '../../../../web/assets/images/ic_favorite_24px.svg',
+                '../../../../web/assets/images/ic_facebook_24px.svg',
+                '../../../../web/assets/images/ic_twitter_24px.svg',
+                '../../../../web/assets/images/ic_skype_24px.svg',
             ],
             dest: 'src/sprites',
             options: {
@@ -77,11 +87,11 @@ module.exports = function(grunt) {
         },
         dev: {
             files: ['src/assets/sass/**/*.scss', 'src/templates/**/*.hbs'],
-            tasks: ['compass:dev', 'assemble:en']
+            tasks: ['compass:dev', 'assemble:site']
         },
         handlebars: {
             files: ['src/templates/*/*.hbs', 'src/templates/layouts/*.hbs' ],
-            tasks: ['assemble:en']
+            tasks: ['assemble:site']
         }
     },
   });
@@ -94,9 +104,16 @@ module.exports = function(grunt) {
 ].forEach(grunt.loadNpmTasks);
 
   // Default task(s).
+  grunt.registerTask('assemble:site', [
+      'assemble:en',
+      'assemble:lt'
+  ]);
+
+  // Default task(s).
   grunt.registerTask('default', [
       'compass:dist',
-      'assemble:en'
+      'assemble:en',
+      'assemble:lt'
   ]);
 
 };

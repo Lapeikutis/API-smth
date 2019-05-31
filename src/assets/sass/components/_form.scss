@@ -1,0 +1,57 @@
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+ -webkit-text-fill-color: none;
+ -webkit-box-shadow: 0 0 0px 1000px #fff inset !important;
+}
+@mixin default-label($background: #fff, $selector: '.label-inside'){
+ #{$selector}{
+   position: absolute;
+   background: $background;
+   font-size: 14px;
+   color: #000;
+   top: 18px;
+   left: 18px;
+   margin: 0;
+   -webkit-transition: .2s ease all;
+   transition: .2s ease all;
+   pointer-events: none;
+
+ }
+}
+@mixin default-input($selector: 'input:not([type=checkbox])', $background: #fff, $height: 56px){
+ #{$selector}{
+   width: 100%;
+   height: $height;
+   border: 1px solid #979797;
+   border-radius: 3px;;
+   background: $background;
+   color: #000;
+   padding-left: 18px;
+   &:focus {
+     outline: none;
+     border-color: $default-bg;
+     -webkit-box-shadow: 0 0 0 1px $default-bg;
+             box-shadow: 0 0 0 1px $default-bg;
+   }
+   &:valid ~ label {
+     top: -7px;
+     font-size: 12px;
+     padding: 0 6px;
+     color: $default-bg;
+   }
+   &:focus ~ label {
+     top: -7px;
+     font-size: 12px;
+     padding: 0 6px;
+     color: $default-bg;
+   }
+ }
+ @include default-label($background);
+}

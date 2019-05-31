@@ -3,21 +3,42 @@
     <head>
         <meta charset="utf-8">
         <title>Admin Panel</title>
-        <link rel="stylesheet" href="assets/css/app.css">
+
+        {{#is default.lang 'en'}}
+            <link rel="stylesheet" href="assets/css/app.css">
+        {{else}}
+            <link rel="stylesheet" href="../assets/css/app.css">
+        {{/is}}
+
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
         {{>navbar}}
         {{>sidebar}}
+        {{>sidebar-right}}
 
-        <div class="section-container">
+        <div id="section-container" class="section-container">
+            {{>title}}
             {{body}}
         </div>
 
 
-        {{#is basename 'index'}}
+        {{#is basename 'dashboard'}}
             {{>footer}}
         {{/is}}
         <div class="svg-sprite-container">{{> 'sprite.symbol' }}</div>
+
+
+        {{#is default.lang 'en'}}
+            <script type="text/javascript" src="../node_modules/chart.js/dist/Chart.min.js"></script>
+        {{else}}
+            <script type="text/javascript" src="../../node_modules/chart.js/dist/Chart.min.js"></script>
+        {{/is}}
+
+        <script type="text/javascript" src="assets/js/chart.js"></script>
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/popper.min.js"></script>
+        <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="assets/js/app.js"></script>
     </body>
 </html>

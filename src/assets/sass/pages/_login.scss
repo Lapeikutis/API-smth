@@ -1,0 +1,42 @@
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+}
+.login {
+  text-align: center;
+  &__title {
+    margin-bottom: 26px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+
+    span {
+      text-transform: uppercase;
+      font-weight: 800;
+      font-size: 24px;
+      margin-left: 10px
+    }
+  }
+  &__form {
+    &__item {
+      position: relative;
+      margin-bottom: 20px;
+      @include default-input();
+      &--checkbox{
+          margin-top: 20px;
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+      }
+    }
+  }
+}
+.svg-sprite-container {
+  display: none;
+}

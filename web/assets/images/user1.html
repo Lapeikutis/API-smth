@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Language" content="en_US">
+
+		<!-- Google Analytics -->
+		<script>
+			window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+			ga('create', 'UA-5883199-3', 'auto');
+			ga('send', 'pageview');
+		</script>
+		<script async src='https://www.google-analytics.com/analytics.js'>
+		</script>
+		<!-- End Google Analytics -->
+
+		<script type="text/javascript">
+			(function () {
+				function isValidUrl(toURL) {
+					// Regex taken from welcome ad.
+					return (toURL || '').match(/^(?:https?:?\/\/)?(?:[^.(){}\\\/]*)?\.?forbes\.com(?:\/|\?|$)/i);
+				}
+
+				function getUrlParameter(name) {
+					name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+					var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+					var results = regex.exec(location.search);
+					return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+				};
+
+				function consentIsSet(message) {
+					console.log(message);
+					var result = JSON.parse(message.data);
+					if(result.message == "submit_preferences"){
+						var toURL = getUrlParameter("toURL");
+						if(!isValidUrl(toURL)){
+							toURL = "https://www.forbes.com/";
+						}
+						location.href=toURL;
+					}
+				}
+
+				var apiObject = {
+					PrivacyManagerAPI:
+					{
+						action: "getConsent",
+						timestamp: new Date().getTime(),
+						self: "forbes.com"
+					}
+				};
+				var json = JSON.stringify(apiObject);
+				window.top.postMessage(json,"*");
+				window.addEventListener("message", consentIsSet, false);
+			})();
+		</script>
+	</head>
+	<div id='teconsent'>
+		<script async="async" type="text/javascript" crossorigin src='//consent.truste.com/notice?domain=forbes.com&c=teconsent&behavior=expressed'></script>
+	</div>
+	<body>
+	</body>
+</html>
